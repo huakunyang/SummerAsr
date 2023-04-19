@@ -11,7 +11,7 @@
 - 从以下的百度网盘地址下载模型，放入本项目的model目录中：
   链接: https://pan.baidu.com/s/13KgAaD79Pd3XsWI6k6VViw?pwd=y4rd 提取码: y4rd
 
-  目录结构和内容如下：
+  目录结构和内容如下：  
    model  
    ├── am.model  
    ├── char.txt  
