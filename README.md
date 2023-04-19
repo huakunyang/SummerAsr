@@ -13,10 +13,11 @@
 
   目录结构和内容如下：
 
-	model
-	├── am.model
-	├── char.txt
-	└── lm.model     
+	model/
+	  am.model
+	  char.txt
+	  lm.model   
+	  
 - 进入Build 目录，执行以下命令：
   cmake ..
   make 
