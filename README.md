@@ -8,8 +8,8 @@
 
 # 使用说明
 - 将本项目的代码克隆到本地，最好是Ubuntu Linux 环境
-- 从以下的百度网盘地址下载模型，放入本项目的model目录中：
-  链接: https://pan.baidu.com/s/13KgAaD79Pd3XsWI6k6VViw?pwd=y4rd 提取码: y4rd
+- 从以下的百度网盘地址下载模型，放入本项目的model目录中：  
+  链接: https://pan.baidu.com/s/13KgAaD79Pd3XsWI6k6VViw?pwd=y4rd 提取码: y4rd  
 
   目录结构和内容如下：  
    model  
