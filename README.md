@@ -9,7 +9,7 @@
 # 使用说明
 - 将本项目的代码克隆到本地，最好是Ubuntu Linux 环境
 - 从以下的百度网盘地址下载模型，放入本项目的model目录中：  
-  链接: https://pan.baidu.com/s/13KgAaD79Pd3XsWI6k6VViw?pwd=y4rd 提取码: y4rd  
+  链接: https://pan.baidu.com/s/13KgAaD79Pd3XsWI6k6VViw?pwd=y4rd 提取码: y4rd
 
   目录结构和内容如下：  
    model  
@@ -18,7 +18,7 @@
    └── lm.model  
 	  
 - 进入Build 目录，执行以下命令：
-  cmake ..
+  cmake ..  
   make 
 
 - 编译完成后，会在Build 目录中生成 asr_test 执行程序
