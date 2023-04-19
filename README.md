@@ -8,27 +8,27 @@
 
 # 使用说明
 - 将本项目的代码克隆到本地，最好是Ubuntu Linux 环境
-- 从以下的百度网盘地址下载模型，放入本项目的model目录中：
+- 从以下的百度网盘地址下载模型，放入本项目的model目录中：  
   链接: https://pan.baidu.com/s/13KgAaD79Pd3XsWI6k6VViw?pwd=y4rd 提取码: y4rd
 
-  目录结构和内容如下：
-
-	model
-	├── am.model
-	├── char.txt
-	└── lm.model     
-- 进入Build 目录，执行以下命令：
-  cmake ..
+  目录结构和内容如下：  
+   model  
+   ├── am.model  
+   ├── char.txt  
+   └── lm.model  
+	  
+- 进入Build 目录，执行以下命令：  
+  cmake ..  
   make 
 
 - 编译完成后，会在Build 目录中生成 asr_test 执行程序
-- 运行下列命令，测试语音识别：
+- 运行下列命令，测试语音识别：  
   ./asr_test ../wavSamples/test.wav
 - 正常情况下，可得到如下结果
 
-  Model loading time costs:0.236086s
-  Asr Result: 今天是二零二二年五月四号现在是晚上十一点五十三分
-  Wav duration: 9.25s, Asr Decoding time costs: 3.35407s, RTF: 0.362602
+  Model loading time costs:0.236086s  
+  Asr Result: 今天是二零二二年五月四号现在是晚上十一点五十三分  
+  Wav duration: 9.25s, Asr Decoding time costs: 3.35407s, RTF: 0.362602  
 
 # 后续开发
 - 后续将开放模型训练和转化脚本
