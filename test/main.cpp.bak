@@ -1,0 +1,110 @@
+#include "stdio.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <unistd.h>
+#include <string.h>
+#include <dirent.h>
+#include "stdlib.h"
+#include <ctime>
+#include "extract_feat.h"
+#include "stdint.h"
+#include "asr.h"
+
+#define STREAM_BLOCK_SIZE (16000*2)
+
+extern float model[];
+
+int main(int argc, char * argv[])
+{
+
+    struct stat st;
+    if(-1 == stat(argv[1], &st))
+    {
+        return -1 ;
+    }
+
+    FILE *fp = fopen(argv[1], "rb");
+    if(!fp)
+    {
+        printf("Fail to open wav file:%s!\n", argv[4]);
+        return -1;
+    }
+   
+    fseek(fp, 44, SEEK_SET);
+
+    int16_t * wavBuf = (int16_t *)malloc(st.st_size-44);
+    fread(wavBuf,st.st_size-44, 1, fp);
+    fclose(fp);
+
+    #if 0
+    float * inBuf = (float *)malloc(sizeof(float)*((st.st_size-44)/2));
+
+    for(int i = 0; i<(st.st_size-44)/2; i++)
+    {
+        inBuf[i] = wavBuf[i]/32768.0; 
+    }
+    #endif
+
+    void * asrData = asrInit(model, false);
+
+    //asrRun(asrData, wavBuf, (((st.st_size)-44)/2));
+    #if 1
+    int frames = (int)(((st.st_size-44)/2)/(STREAM_BLOCK_SIZE));
+
+    //frames = 4;
+    for(int i = 0; i< frames; i++)
+    {
+        if(i< (frames-1))
+        {
+            asrRun(asrData, wavBuf+i*(STREAM_BLOCK_SIZE), STREAM_BLOCK_SIZE);
+        }
+        else
+        {
+            asrRun(asrData, wavBuf+i*(STREAM_BLOCK_SIZE),STREAM_BLOCK_SIZE);
+        }
+    }
+
+    int remainLen = (st.st_size-44)/2 - frames*(STREAM_BLOCK_SIZE);
+    asrRun(asrData, wavBuf+frames*(STREAM_BLOCK_SIZE), remainLen);
+
+    #endif
+
+
+
+#if 0
+    struct stat st;
+    if(-1 == stat(argv[1], &st))
+    {
+        return -1 ;
+    }
+
+    FILE *fp = fopen(argv[1], "rb");
+    if(!fp)
+    {
+        printf("Fail to open wav file:%s!\n", argv[4]);
+        return -1;
+    }
+    
+    fseek(fp, 44, SEEK_SET);
+
+    int16_t * wavBuf = (int16_t *)malloc(st.st_size-44);
+    fread(wavBuf,st.st_size-44, 1, fp);
+
+    fclose(fp);
+
+    float * result = (float *)malloc(1024*1024*5*sizeof(float));
+    memset(result,0,1024*1024*5*sizeof(float));
+
+    float * inBuf = (float *)malloc(sizeof(float)*((st.st_size-44)/2));
+
+    for(int i = 0; i<(st.st_size-44)/2; i++)
+    {
+        inBuf[i] = wavBuf[i]/32768.0; 
+    }
+
+    extract_feat(inBuf,(st.st_size-44)/2,16000,10,20,result);
+#endif
+
+}
+
