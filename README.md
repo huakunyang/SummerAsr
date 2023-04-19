@@ -12,11 +12,10 @@
   链接: https://pan.baidu.com/s/13KgAaD79Pd3XsWI6k6VViw?pwd=y4rd 提取码: y4rd
 
   目录结构和内容如下：
-
-	model/
-	  am.model
-	  char.txt
-	  lm.model   
+   model  
+   ├── am.model  
+   ├── char.txt  
+   └── lm.model  
 	  
 - 进入Build 目录，执行以下命令：
   cmake ..
