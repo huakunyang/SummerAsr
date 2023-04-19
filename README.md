@@ -22,13 +22,13 @@
   make 
 
 - 编译完成后，会在Build 目录中生成 asr_test 执行程序
-- 运行下列命令，测试语音识别：
+- 运行下列命令，测试语音识别：  
   ./asr_test ../wavSamples/test.wav
 - 正常情况下，可得到如下结果
 
-  Model loading time costs:0.236086s
-  Asr Result: 今天是二零二二年五月四号现在是晚上十一点五十三分
-  Wav duration: 9.25s, Asr Decoding time costs: 3.35407s, RTF: 0.362602
+  Model loading time costs:0.236086s  
+  Asr Result: 今天是二零二二年五月四号现在是晚上十一点五十三分  
+  Wav duration: 9.25s, Asr Decoding time costs: 3.35407s, RTF: 0.362602  
 
 # 后续开发
 - 后续将开放模型训练和转化脚本
