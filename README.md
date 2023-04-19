@@ -17,7 +17,7 @@
    ├── char.txt  
    └── lm.model  
 	  
-- 进入Build 目录，执行以下命令：
+- 进入Build 目录，执行以下命令：  
   cmake ..  
   make 
 
