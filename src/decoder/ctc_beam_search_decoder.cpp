@@ -8,6 +8,7 @@
 #include "scorer.h"
 #include <sys/time.h>
 #include <iomanip>
+#include <limits>
 
 const float NUM_FLT_INF = std::numeric_limits<float>::max();
 const float NUM_FLT_MIN = std::numeric_limits<float>::min();
