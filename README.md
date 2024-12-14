@@ -6,6 +6,7 @@
 - SummerAsr 的底层计算库使用Eigen，Eigen是一套模板定义的函数，大部分情况下，只需要包含头文件即可，所以本项目没有其他依赖，在C++环境下可以独立编译和运行。
 - 本项目使用Eigen提供的矩阵库实现了神经网络的算子，不需要依赖例如pytorch，tensorflow， ncnn 等其他NN运行环境。
 - 本项目在 Ubuntu 上编译运行通过，其他类Linux平台，如Android，树莓派等，也应该没啥大问题，在Window上没有测试过，可能需要少许改动。
+- 本项目适用MIT License，基于本项目的开发，使用人员或机构，请遵循 MIT License: https://mit-license.org
 
 # 使用说明
 - 将本项目的代码克隆到本地，最好是Ubuntu Linux 环境
@@ -30,6 +31,9 @@
   Model loading time costs:0.236086s  
   Asr Result: 今天是二零二二年五月四号现在是晚上十一点五十三分  
   Wav duration: 9.25s, Asr Decoding time costs: 3.35407s, RTF: 0.362602  
+
+# License
+- 本项目适用MIT License，基于本项目的开发，使用人员或机构，请遵循 MIT License: https://mit-license.org
 
 # 后续开发
 - 后续将开放模型训练和转化脚本
